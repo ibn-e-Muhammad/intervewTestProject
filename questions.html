@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Files</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel=" stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="questions.css">
+</head>
+<body>
+    <header>
+      <a href="#" class="logo">PG Files</a>
+      <ul class="navelist">
+        <li><a href="landingPage.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Complaints</a></li>
+        <li><a href="#">Request Point</a></li>
+      </ul>
+      <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+    <section class="hero">
+      <div class="question_text">
+        <h4>Intitute of Petroleum and Natural Gas Engineering</h4>
+        <h1>
+          Q.
+        </h1>
+
+        <p>
+          Lorem ipsum dolo r sit amet consectetur adipisicing elit. Non excepturi
+          quisquam, id fuga repellat corrupti.
+        </p>
+        <a href="#" class="btn">Next</a>
+      </div>
+      <div class="solutions">
+        <label for="card" class="solHead">Choose a suitable option:</label>
+
+        <select id="card" class="options">
+          <option value="v">Solutions</option>
+          <option value="s">Optoin 1</option>
+          <option value="o">Option 2</option>
+          <option value="a">Option 3</option>
+          <option value="b">Option 4</option>
+        </select>
+      </div>
+      <div class="icons">
+        <a href="#"><i class="ri-instagram-line"></i></a>
+        <a href="#"><i class="ri-youtube-line"></i></a>
+        <a href="#"><i class="ri-dribbble-line"></i></a>
+      </div>
+       <div id="resultContainer" class="result-box" style="display:none;">
+      <h2 id="resultMessage"></h2>
+    </div>
+    </section>
+ 
+   
+    
+
+    <script>
+        const questions = [
+  {
+    question: "How often do you inspect safety equipment before starting a task?",
+    options: ["Never", "Rarely", "Sometimes", "Always"]
+  },
+  {
+    question: "If you see a coworker bypassing safety protocols, you would…",
+    options: ["Ignore", "Fix it yourself", "Warn them privately", "Report immediately"]
+  },
+  {
+    question: "Rate your agreement: Safety drills are a waste of time.",
+    options: ["Strongly Agree", "Agree", "Disagree", "Strongly Disagree"]
+  },
+  {
+    question: "What’s your first step if you notice a gas leak?",
+    options: ["Fix it alone", "Wait for instructions", "Evacuate and alert", "Call maintenance"]
+  },
+  {
+    question: "How important are safety briefings before shifts?",
+    options: ["Not Important", "Somewhat Important", "Important", "Extremely Important"]
+  },
+  {
+    question: "You find a damaged fire extinguisher. You would…",
+    options: ["Assume someone else will handle", "Mention later", "Report to maintenance", "Replace immediately"]
+  },
+  {
+    question: "Rate your agreement: Cutting corners on safety saves time.",
+    options: ["Strongly Agree", "Agree", "Disagree", "Strongly Disagree"]
+  },
+  {
+    question: "How often do you review emergency exit routes?",
+    options: ["Never", "Rarely", "Sometimes", "Daily"]
+  },
+  {
+    question: "A coworker isn’t wearing PPE. You would…",
+    options: ["Ignore it", "Say nothing", "Report to supervisor", "Remind them to wear it"]
+  },
+  {
+    question: "During a sudden storm, equipment fails. You would…",
+    options: ["Panic", "Wait it out", "Shut down operations", "Follow protocols"]
+  },
+  {
+    question: "How do you handle 12-hour shifts in extreme heat?",
+    options: ["Very Poorly", "Poorly", "Moderately", "Very Well"]
+  },
+  {
+    question: "A coworker collapses. Your response?",
+    options: ["Freeze", "Yell for help", "Call emergency team", "Perform first aid"]
+  },
+  {
+    question: "Rate your ability to stay calm during equipment malfunctions",
+    options: ["Cannot Stay Calm", "Somewhat Calm", "Very Calm", "Extremely Calm"]
+  },
+  {
+    question: "You receive conflicting instructions during a crisis. You would…",
+    options: ["Guess", "Follow last instruction", "Wait and observe", "Clarify with supervisors"]
+  },
+  {
+    question: "How do you react to loud, unexpected alarms?",
+    options: ["Panic", "Get startled", "Calm myself", "Stay Focused"]
+  },
+  {
+    question: "You’re sleep-deprived but need to finish a critical task. You would…",
+    options: ["Make mistakes", "Ask for help", "Take a break", "Push through"]
+  },
+  {
+    question: "Rate your agreement: High-pressure situations motivate me.",
+    options: ["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]
+  },
+  {
+    question: "A supervisor criticizes your work publicly. You would…",
+    options: ["Argue", "Shut down", "Stay calm and improve", "Reflect later and improve"]
+  },
+  {
+    question: "How well do you handle sudden schedule changes?",
+    options: ["Very Poorly", "Poorly", "Well", "Very Well"]
+  },
+  {
+    question: "A teammate refuses to follow orders. You would…",
+    options: ["Ignore", "Report immediately", "Discuss with the team", "Discuss privately"]
+  },
+  {
+    question: "Rate your agreement: I enjoy collaborating on complex tasks.",
+    options: ["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]
+  },
+  {
+    question: "How do you resolve conflicts with coworkers?",
+    options: ["Avoid confrontation", "Involve supervisor", "Open dialogue", "Escalate if needed"]
+  },
+  {
+    question: "A new hire struggles with tasks. You would…",
+    options: ["Let them figure it out", "Complain to the team", "Offer support", "Mentor them"]
+  },
+  {
+    question: "Rate your agreement: Team success matters more than individual credit.",
+    options: ["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]
+  },
+  {
+    question: "Your shift schedule changes abruptly. You would…",
+    options: ["Refuse", "Complain but comply", "Adapt eventually", "Adjust smoothly"]
+  },
+  {
+    question: "How comfortable are you working in rotating day/night shifts?",
+    options: ["Very Uncomfortable", "Uncomfortable", "Comfortable", "Very Comfortable"]
+  },
+  {
+    question: "You’re reassigned to a new task last-minute. You would…",
+    options: ["Resist", "Ask for training", "Try your best", "Learn quickly"]
+  },
+  {
+    question: "Rate your agreement: I thrive in unpredictable environments.",
+    options: ["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]
+  },
+  {
+    question: "How do you handle sudden changes in project deadlines?",
+    options: ["Poorly", "Manage with difficulty", "Well", "Very Well"]
+  },
+  {
+    question: "A pipeline leaks. Your first action?",
+    options: ["Repair alone", "Evacuate", "Inform supervisor", "Isolate and alert"]
+  },
+  {
+    question: "How do you troubleshoot malfunctioning equipment?",
+    options: ["Guess randomly", "Try random fixes", "Consult team", "Follow protocols"]
+  },
+  {
+    question: "You’re unsure how to fix a critical error. You would…",
+    options: ["Guess", "Ask a coworker", "Call supervisor", "Consult manuals"]
+  },
+  {
+    question: "Rate your agreement: I prefer structured guidelines over improvisation.",
+    options: ["Strongly Disagree", "Disagree", "Agree", "Strongly Agree"]
+  },
+  {
+    question: "How do you prioritize tasks during a crisis?",
+    options: ["Panic", "Delegate randomly", "Ask for help", "Follow protocol"]
+  }
+];
+
+
+
+function showResult(totalScore) {
+  const resultContainer = document.getElementById('resultContainer');
+  const resultMessage = document.getElementById('resultMessage');
+
+  resultContainer.classList.remove("success", "probation", "fail");
+
+  if (totalScore >= 450) {
+    resultMessage.textContent = `🎉 Excellent! You scored ${totalScore}. You've cleared the interview and are selected!`;
+    resultContainer.classList.add("success");
+  } else if (totalScore >= 400 && totalScore < 450) {
+    resultMessage.textContent = `👍 You scored ${totalScore}. You’re being hired on a probationary period. Work harder and improve yourself!`;
+    resultContainer.classList.add("probation");
+  } else {
+    resultMessage.textContent = `❌ You scored ${totalScore}. Unfortunately, you did not qualify for the position. Better luck next time!`;
+    resultContainer.classList.add("fail");
+  }
+
+  resultContainer.style.display = "block";
+}
+
+
+
+      
+        const scores = [0, 5, 10, 15]; // Fixed score per option position (A, B, C, D)
+        let currentQuestionIndex = 0;
+        let totalScore = 0;
+      
+        const questionText = document.querySelector(".question_text p");
+        const questionHeading = document.querySelector(".question_text h1");
+        const select = document.getElementById("card");
+        const nextBtn = document.querySelector(".btn");
+      
+        function loadQuestion(index) {
+          const q = questions[index];
+          questionHeading.innerText = `Q${index + 1}.`;
+          questionText.innerText = q.question;
+      
+          // Clear and repopulate select options
+          select.innerHTML = '<option value="">Choose a suitable option</option>';
+          q.options.forEach((optionText, i) => {
+            const opt = document.createElement("option");
+            opt.value = i; // 0 to 3 for indexing scores
+            opt.innerText = optionText;
+            select.appendChild(opt);
+          });
+        }
+      
+        nextBtn.addEventListener("click", function(e) {
+          e.preventDefault();
+      
+          const selectedIndex = select.value;
+      
+          if (selectedIndex === "") {
+            alert("Please select an option.");
+            return;
+          }
+      
+          // Add score based on index (0, 1, 2, 3)
+          totalScore += scores[selectedIndex];
+          console.log("Score added:", scores[selectedIndex]);
+          console.log("Total Score:", totalScore);
+      
+          currentQuestionIndex++;
+      
+          if (currentQuestionIndex < questions.length) {
+            loadQuestion(currentQuestionIndex);
+          } else {
+            // Quiz end
+            questionHeading.innerText = "Done!";
+            questionText.innerText = `Your Total Score is ${totalScore}`;
+            select.style.display = "none";
+            nextBtn.style.display = "none";
+            showResult(totalScore); // Show result based on total score
+          }
+        });
+      
+        // Load the first question on start
+        loadQuestion(currentQuestionIndex);
+      </script>
+      
+
+
+  </body>
+</html>

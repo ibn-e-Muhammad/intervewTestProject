@@ -1,0 +1,242 @@
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 33px 9%;
+  background: transparent;
+}
+
+.logo {
+  font-family: "Nanum Brush Script", cursive;
+  font-size: 60px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(
+    125deg,
+    #000000ab 31%,
+    rgba(253, 253, 253, 0.842) 69%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navelist {
+  display: flex;
+}
+.navelist a {
+  color: white;
+  margin-left: 60px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.55s ease;
+}
+.navelist a:hover {
+  border-bottom: 2px solid white;
+}
+#menu-icon {
+  color: white;
+  font-size: 35px;
+  z-index: 10001;
+  display: none;
+}
+.hero {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle, #FFCDB2, #FFB4A2);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 420px) {
+  .hero {
+    background: radial-gradient(circle, #690d94, #1a1a1a);
+  }
+}
+
+section {
+  padding: 0 19%;
+}
+
+.hero-text h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 40px;
+}
+.hero-text h1 {
+  font-family: "Nanum Brush Script", cursive;
+  font-size: 120px;
+  line-height: 0.65;
+    font-weight: 900;
+  background: -webkit-linear-gradient(
+    135deg,
+    #000000ab 65%,
+    rgba(253, 253, 253, 0.842) 35%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* margin: 0 0 45px; */
+}
+
+#h1text {
+  margin-left: 120px;
+}
+
+.hero-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  color: white;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+.hero-img img {
+  width: 400px;
+  height: auto;
+}
+.hero-text a {
+  display: inline-block;
+  color: white;
+  background: #523553;
+  border: 1px solid transparent;
+  padding: 12px 30px;
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.55s ease;
+}
+.hero-text a:hover {
+  background: transparent;
+  border: 1px solid white;
+  transform: translateX(8px);
+}
+.icons {
+  position: absolute;
+  top: 50%;
+  padding: 0 9%;
+  transform: translateY(-50%);
+}
+.icons i {
+  display: block;
+  margin: 26px 0;
+  font-size: 24px;
+  color: white;
+  transition: all 0.5s ease;
+}
+.icons i:hover {
+  color: rgb(158, 29, 158);
+  transform: translateY(-5px);
+}
+
+@media (max-width: 1535px) {
+  header {
+    padding: 15px 3%;
+    transition: 0.2s;
+  }
+  .icons {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
+}
+@media (max-width: 1460px) {
+  section {
+    padding: 0 12%;
+    transition: 0.2s;
+  }
+}
+@media (max-width: 1340px) {
+  .hero-img img {
+    width: 100%;
+    height: auto;
+  }
+  .hero-text hl {
+    font-size: 75px;
+    margin: 0 0 30px;
+  }
+  .hero-text h5 {
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 1195px) {
+  section {
+    padding: 0 3%;
+    transition: 0.2s;
+  }
+  .hero-text {
+    padding-top: 115px;
+  }
+  .hero-img {
+    text-align: center;
+  }
+  .hero-img img {
+    width: 160px;
+    height: auto;
+  }
+  .hero {
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .icons {
+    display: none;
+  }
+}
+@media (max-width: 990px) {
+  #menu-icon {
+    display: block;
+  }
+  .navelist {
+    position: absoLute;
+    top: 100%;
+    right: -100%;
+    width: 300px;
+    height: 40vh;
+    background: #523553;
+    display: fLex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    transition: aLL 0.55s ease;
+  }
+  .navelist a {
+    display: block;
+    margin: 8px 0;
+    margin-left: 0;
+  }
+  .navelist.open {
+    right: 0;
+  }
+  #h1text {
+    margin-left: 94px;
+  }
+}
+@media (max-width: 680px) {
+  .hero-img img {
+    width: 180px;
+    height: auto;
+  }
+}
