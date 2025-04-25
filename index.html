@@ -40,8 +40,7 @@
         </h1>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non excepturi
-          quisquam, id fuga repellat corrupti.
+          A good judgment is usually the result of experience. And experience is frequently the result of bad judgment.”“A good judgment is usually the result of experience. And experience is frequently the result of bad judgment.
         </p>
         <a href="questions.html" class="btn">Start Interview</a>
       </div>
@@ -54,6 +53,27 @@
         <a href="#"><i class="ri-dribbble-line"></i></a>
       </div>
     </section>
- 
+
+  <script>
+
+let menu = document.querySelector("#menu-icon");
+let navelist = document.querySelector(".navelist");
+menu.onclick = () => {
+  menu.classList.toggle("bx-x");
+  navelist.classList.toggle("open");
+};
+
+const sr = ScrollReveal({
+  distance: "70px",
+  duration: 3000,
+  delay: 450,
+  reset: true,
+});
+sr.reveal(".hero-text", { delay: 200, origin: "top" });
+sr.reveal(".hero-img", { delay: 450, origin: "top" });
+sr.reveal(".icons", { delay: 550, origin: "left" });
+
+     </script>
+    
   </body>
 </html>
